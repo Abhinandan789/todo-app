@@ -473,7 +473,6 @@ input[type='checkbox']:checked+h1 {
     #inputText::placeholder {
         font-size: 15px;
     }
-
     .clock {
         display: inline-block;
         position: relative;
