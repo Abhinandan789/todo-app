@@ -1,0 +1,497 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* background-image: url(images/bg.jpg); */
+    /*background-size: cover; */
+    text-align: center;
+
+
+    min-width: 400px;
+    min-height: 600px;
+
+
+    max-width: max-content;
+    margin: auto;
+    background: linear-gradient(45deg, #820000, #3C6255, #791717, #1C82AD);
+    background-size: 800% 600%;
+    /* animation: gradient 50s linear infinite; */
+    animation: gradient 16s linear infinite;
+    animation-direction: alternate;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 100%;
+    }
+}
+
+.todoHeading {
+    color: white;
+    mix-blend-mode: overlay;
+}
+
+.number {
+    color: white;
+    mix-blend-mode: overlay;
+}
+
+header {
+    text-align: left;
+    /* margin-left: 480px; */
+}
+
+#inputText {
+
+    background-color: aliceblue;
+    border: none;
+    font-size: 22px;
+    border-radius: 12px;
+    padding: 9px;
+    padding-right: 300px;
+}
+
+#inputText:focus {
+    outline: none;
+    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+}
+
+#inputText::placeholder {
+    /* text-align: left; */
+    text-align: justify;
+
+}
+
+
+/* Add Button  */
+#add {
+    border: none;
+    border-radius: 10px;
+    padding: 8px;
+    background-color: aliceblue;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    font-weight: bolder;
+    color: gray;
+    position: relative;
+    top: -4px;
+}
+
+#inputText:focus+#add, #add:hover {
+    /* border: solid 1px black; */
+    color: rgb(15, 14, 14);
+    cursor: pointer;
+    /* transition: 0.4s ease-in-out; */
+    /* font-weight: bold; */
+}
+
+/* second part */
+
+
+
+.info {
+    margin-top: 12px;
+    /* background-color: aliceblue; */
+    color: black;
+    border: solid 1px white;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    /* width: 77%; */
+    /* color: gray; */
+}
+
+.info h4 {
+    display: inline-block;
+    margin-left: 12px;
+    cursor: pointer;
+}
+
+.info button {
+    color: black;
+    border: none;
+    background: none;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.info button:hover {
+    cursor: pointer;
+    color: white;
+}
+
+.btns {
+    /* color: black; */
+    display: inline-block;
+    padding: 19px;
+    margin-left: 30px;
+    border: none;
+    /* background-color: aliceblue; */
+    position: relative;
+    top: -63px;
+    right: 22px;
+    /* background: none; */
+}
+
+/* checkbox style */
+.taskList input {
+    -webkit-appearance: none;
+    border: 1px solid hsl(234, 11%, 52%);
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer;
+    border: 1px solid white;
+
+}
+
+/* When checkBox is checked */
+.taskList input:checked {
+    background: url(images/icon-check.svg), linear-gradient(to right, hsl(168.9, 36.1%, 38%), hsl(351.4, 53.8%, 45.9%));
+    background-position-x: 0%, 0%;
+    background-position-y: 0%, 0%;
+    background-repeat: repeat, repeat;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+input[type='checkbox']:checked+h1 {
+    content: '';
+    text-decoration: line-through;
+    transition: 0.5s ease-in-out;
+    text-decoration-color: gray;
+    color: gray;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+
+.btns button {
+    color: black;
+
+    border: none;
+    background: none;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.btns button:hover {
+    cursor: pointer;
+    color: Black;
+}
+
+#clearAll {
+    margin-left: 360px;
+}
+
+
+/* info btn styles */
+#allTask:target {
+    color: black;
+}
+
+#activeTask:target {
+    color: black;
+}
+
+#completedTask:target {
+    color: black;
+}
+
+/* Task STYLES */
+
+.tasks {
+    display: flex;
+    flex-direction: column;
+    /* background-color: aliceblue; */
+    text-align: left;
+    border-bottom: solid 1px white;
+    border-radius: 12px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+
+}
+
+.taskList {
+    display: flex;
+    border-radius: 12px;
+    border-bottom: solid 1px white;
+    gap: 12px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 15px;
+    align-items: center;
+    background-color: transparent;
+
+}
+
+
+.taskList h1 {
+    font-size: 20px;
+}
+
+.taskList:nth-last-child(1) {
+    border: none;
+}
+
+#check:target {
+    border-radius: 12px;
+
+}
+
+
+
+.delBtn {
+    margin-left: auto;
+    margin-right: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.delBtn:hover {
+    color: brown;
+}
+
+
+
+
+/* CLOCK */
+.clock {
+    display: inline-block;
+    position: relative;
+    left: 17vw;
+    top: 5.4vw;
+    font-size: 19px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive */
+
+
+
+@media screen and (max-width: 600px) {
+
+    /* body{
+        background-size: cover;
+        margin-top: 30px;
+        background-repeat: none;
+        background-size: inherit;
+    } */
+
+    header {
+        margin-left: 35px;
+    }
+
+
+
+    #inputText {
+        padding-right: 74px;
+    }
+
+    .info {
+        width: 90%;
+        margin-left: 15px;
+    }
+
+    #clearAll {
+        margin-left: 150px;
+    }
+
+    /* Button Styles  */
+    .btns button {
+        padding-right: 15px;
+    }
+
+    .btns {
+        top: 12px;
+        left: -20px;
+        padding: 12px;
+        padding-left: 65px;
+        padding-right: 65px;
+        border: 1px solid white;
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+    }
+
+    .taskList {
+        font-size: 13px;
+        padding: 0%;
+    }
+
+    .tasks {
+        margin-left: 35px;
+        margin-right: 45px;
+        margin-top: 30px;
+    }
+
+    #inputText::placeholder {
+        font-size: 15px;
+    }
+
+    .clock {
+        display: inline-block;
+        position: relative;
+        left: 19vw;
+        top: 10.4vw;
+        font-size: 16px;
+    }
+}
+
+
+
+@media screen and (max-width:400px) {
+
+    body {
+
+        margin-left: -25px;
+        min-width: 400px;
+        min-height: 600px;
+    }
+
+    #inputText {
+        padding-right: 30px;
+        padding-left: 0px;
+    }
+
+
+
+    #clearAll {
+        margin-left: 80px;
+    }
+
+    .info {
+        margin-left: 37px;
+    }
+
+    .btns {
+        text-align: center;
+        padding: 12px;
+        left: 4px;
+        padding-left: 65px;
+        padding-right: 45px;
+
+    }
+
+    .taskList {
+        font-size: 10px;
+    }
+
+    .clock {
+        display: inline-block;
+        position: relative;
+        left: 22vw;
+        top: 15.4vw;
+        font-size: 16px;
+
+    }
+
+    .tasks {
+        margin-left: 76px;
+        margin-right: 45px;
+        margin-top: 30px;
+    }
+
+}
+
+/* For Mobile Devices */
+
+@media screen and (max-width:380px) {
+
+    body {
+        min-width: 400px;
+        min-height: 600px;
+        font-size: 15px;
+    }
+
+    #inputText {
+        padding-right: 20px;
+        padding-left: 0px;
+
+    }
+
+    .info {
+        width: 87%
+    }
+
+    #clearAll {
+        margin-left: 26px;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .header {
+        margin-right: px;
+    }
+
+    /* Buttons */
+
+    .btns {
+        padding: 10px;
+        left: 1px;
+        padding-left: 33px;
+        padding-right: 15px;
+
+    }
+
+    .taskList {
+        font-size: 10px;
+    }
+
+    .tasks {
+        margin-left: 40px;
+        margin-right: 10px;
+        margin-top: 30px;
+    }
+
+    #inputText::placeholder {
+        font-size: 15px;
+    }
+
+    .clock {
+        display: inline-block;
+        position: relative;
+        left: 17vw;
+        top: 15.4vw;
+        font-size: 16px;
+    }
+}
+
+
+
+
+
+
+/* ALL ACTIVE COMPLETED btns active state styling */
+.btns button.active {
+
+
+    color: #fff;
+
+}
